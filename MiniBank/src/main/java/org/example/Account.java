@@ -10,7 +10,7 @@ public class Account{
     }
 
     public void deposit (double amount) {
-        System.out.println("Sen intentaron depositar: " + amount);
+        System.out.println("Se intentó depositar: " + amount);
         if (amount > 0) {
             balance += amount;
         } else {
@@ -19,7 +19,7 @@ public class Account{
     }
 
     public void withdraw (double amount) {
-        System.out.println("Sen intentaron sustraer: " + amount);
+        System.out.println("Se intentó sustraer: " + amount);
         if (amount > 0 && balance >= amount) {
             balance -= amount;
         } else {
