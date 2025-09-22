@@ -26,9 +26,10 @@ El objetivo es aplicar conceptos básicos como **variables, constantes, tipos de
     - Saldo inicial (double).
 - Menú de opciones:
     1. **Ingresar dinero** → suma al saldo.
-    2. **Retirar dinero** → resta al saldo (no puede quedar en negativo).
-    3. **Ver saldo** → muestra el saldo actual y saldo con interés.
-    4. **Salir** → cierra el programa.
+    2. **Retirar dinero** → resta al saldo.
+    3. **Ver saldo** → muestra el saldo actual.
+    4. **Ver saldo con interés** → muestra el saldo con interés actual.
+    5. **Salir** → cierra el programa.
 - Se usará una **constante** para el interés anual.
 
 ---
