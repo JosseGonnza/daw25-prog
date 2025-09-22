@@ -13,6 +13,7 @@ public class Account{
         System.out.println("Se intentó depositar: " + amount);
         if (amount > 0) {
             balance += amount;
+            System.out.println("Balance actual: " + balance);
         } else {
             System.out.println("No se pudo realizar la operación.");
         }
@@ -22,6 +23,7 @@ public class Account{
         System.out.println("Se intentó sustraer: " + amount);
         if (amount > 0 && balance >= amount) {
             balance -= amount;
+            System.out.println("Balance actual: " + balance);
         } else {
             System.out.println("No se pudo realizar la operación.");
         }
