@@ -1,6 +1,6 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=9df2ea&animation=fadeIn&height=120&section=header"/>
 
-# 🏦 Mini Sistema Bancario en Java
+# 🏦 Mini Sistema Bancario
 
 ## 📌 Descripción
 Este proyecto consiste en desarrollar un **sistema bancario simple en consola** usando **Java puro**, como práctica del **Tema 1 de Programación (UD1)**.  
@@ -36,15 +36,6 @@ El objetivo es aplicar conceptos básicos como **variables, constantes, tipos de
 ## 🚀 Tecnologías
 - Java (JDK 21).
 - IDE: IntelliJ IDEA
-
----
-
-## 📂 Estructura de Proyecto (sugerida)
-
-/src   
-└── Main.java # Clase principal con el menú  
-└── Banco.java # Clase que gestiona operaciones   
-└── Cuenta.java # Clase para representar una cuenta bancaria
 
 ---
 
