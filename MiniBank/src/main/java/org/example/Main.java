@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     private static final double INTEREST_RATE = 0.02;
+    private static Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
         Account myAccount = new Account("", 0.00);
 
         System.out.println("Nombre de la cuenta bancaria: ");
@@ -40,18 +40,16 @@ public class Main {
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    System.out.println("Qué cantidad desea depositar? ");
-                    myAccount.deposit(scanner.nextDouble());
+                    handleDeposit(myAccount);
                     break;
                 case 2:
-                    System.out.println("Qué cantidad desea sustraer? ");
-                    myAccount.withdraw(scanner.nextDouble());
+                    handleWithdraw(myAccount);
                     break;
                 case 3:
-                    System.out.println("Saldo Actual: " + myAccount.initialBalance);
+                    handleShowBalance(myAccount);
                     break;
                 case 4:
-                    System.out.println("Saldo con interés anual: " + calculateBalanceWithAnnualInterest(myAccount.initialBalance));
+                    handleShowBalanceWithInterest(myAccount);
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
@@ -62,6 +60,34 @@ public class Main {
             }
             System.out.println(" ");
         }
+    }
+
+    public static void handleDeposit(Account account) {
+        System.out.println("Qué cantidad desea depositar? ");
+        double amount = scanner.nextDouble();
+        if (account.deposit(amount)) {
+            System.out.println("✅ Depósito exitoso! Nuevo saldo: " + account.getBalance());
+        } else {
+            System.out.println("❌ Error: Ingrese una cantidad válida");
+        }
+    }
+
+    public static void handleWithdraw(Account account) {
+        System.out.println("Qué cantidad desea retirar? ");
+        double amount = scanner.nextDouble();
+        if (account.withdraw(amount)) {
+            System.out.println("✅ Retiro exitoso! Nuevo saldo: " + account.getBalance());
+        } else {
+            System.out.println("❌ Error: Retire una cantidad válida");
+        }
+    }
+
+    public static void handleShowBalance(Account account) {
+        System.out.println("El saldo actual es de: " + account.getBalance());
+    }
+
+    public static void handleShowBalanceWithInterest(Account account) {
+        System.out.println("El saldo con intereses es de: " + calculateBalanceWithAnnualInterest(account.getBalance()));
     }
 
     public static double calculateBalanceWithAnnualInterest(double balance) {

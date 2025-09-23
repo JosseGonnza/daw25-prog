@@ -9,24 +9,26 @@ public class Account{
         this.initialBalance = initialBalance;
     }
 
-    public void deposit (double amount) {
-        System.out.println("Se intentó depositar: " + amount);
+    public boolean deposit(double amount) {
         if (amount > 0) {
             initialBalance += amount;
-            System.out.println("Balance actual: " + initialBalance);
+            return true;
         } else {
-            System.out.println("No se pudo realizar la operación.");
+            return false;
         }
     }
 
-    public void withdraw (double amount) {
-        System.out.println("Se intentó sustraer: " + amount);
+    public boolean withdraw(double amount) {
         if (amount > 0 && initialBalance >= amount) {
             initialBalance -= amount;
-            System.out.println("Balance actual: " + initialBalance);
+            return true;
         } else {
-            System.out.println("No se pudo realizar la operación.");
+            return false;
         }
+    }
+
+    public double getBalance() {
+        return initialBalance;
     }
 }
 
