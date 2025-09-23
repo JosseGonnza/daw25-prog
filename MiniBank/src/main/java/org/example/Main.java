@@ -30,13 +30,7 @@ public class Main {
 
 
         while (true) {
-            System.out.println("\nElige una opción:\n " +
-                    "1. Ingresar dinero.\n " +
-                    "2. Retirar dinero.\n " +
-                    "3. Ver saldo.\n " +
-                    "4. Ver saldo con interés.\n " +
-                    "5. Salir.\n ");
-
+            showMenu();
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -60,6 +54,16 @@ public class Main {
             }
             System.out.println(" ");
         }
+    }
+
+    private static void showMenu() {
+        System.out.println("Bienvenido al Banco Virtual!\n" +
+                "Elige una opción:\n " +
+                "1. Ingresar dinero.\n " +
+                "2. Retirar dinero.\n " +
+                "3. Ver saldo.\n " +
+                "4. Ver saldo con interés.\n " +
+                "5. Salir.\n ");
     }
 
     public static void handleDeposit(Account account) {
