@@ -3,20 +3,21 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+    private static final double INTEREST_RATE = 0.02;
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Account myAccount = new Account("Jose", 0);
-        Bank myBank = new Bank();
+        Account myAccount = new Account("", 0.00);
 
         System.out.println("Nombre de la cuenta bancaria: ");
-        myAccount.holderName = scanner.nextLine();
+        myAccount.accountName = scanner.nextLine();
 
         while(true) {
             System.out.println("Saldo inicial: ");
             if (scanner.hasNextDouble()) {
-                myAccount.balance = scanner.nextDouble();
-                if (myAccount.balance < 0) {
+                myAccount.initialBalance = scanner.nextDouble();
+                if (myAccount.initialBalance < 0) {
                     System.out.println("La cantidad especificada no es correcta. ");
                 } else {
                     break;
@@ -47,10 +48,10 @@ public class Main {
                     myAccount.withdraw(scanner.nextDouble());
                     break;
                 case 3:
-                    System.out.println("Saldo Actual: " + myAccount.balance);
+                    System.out.println("Saldo Actual: " + myAccount.initialBalance);
                     break;
                 case 4:
-                    System.out.println("Saldo con interés anual: " + myBank.calculateBalanceWithAnnualInterest(myAccount.balance));
+                    System.out.println("Saldo con interés anual: " + calculateBalanceWithAnnualInterest(myAccount.initialBalance));
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
@@ -61,5 +62,9 @@ public class Main {
             }
             System.out.println(" ");
         }
+    }
+
+    public static double calculateBalanceWithAnnualInterest(double balance) {
+        return (1 + INTEREST_RATE) * balance;
     }
 }
